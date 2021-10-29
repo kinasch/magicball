@@ -12,6 +12,7 @@ UserSettings/
 # Visual Studio cache directory
 .vs/
 .vscode/
+.vsconfig
 
 # IntelliJ
 .idea/
