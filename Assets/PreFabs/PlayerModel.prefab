@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicBall: {fileID: 5827294893207968125, guid: 450be345e15d9f844aef49bdefc265f6, type: 3}
-  launchForce: 12
+  launchForce: 6
   throwPosition: {fileID: 4873448907939468905}
 --- !u!1 &4818059876952285511
 GameObject:
@@ -686,7 +686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4854897700080185263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 1.92, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4818059876589962370}
