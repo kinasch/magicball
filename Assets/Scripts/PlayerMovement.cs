@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    void FixedUpdate()
+    void Update()
     {
         moveX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(moveX, 0, 0) * Time.deltaTime * moveSpeed;

@@ -9,16 +9,22 @@ public class ArmAim : MonoBehaviour
     public Transform throwPosition;
 
     //script to makes arms look to mouse position
-    void FixedUpdate()
+    void Update()
     {
         Vector2 armPosition = transform.position;
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint transforms pixel coordinates to world space 
         Vector2 direction = mousePosition - armPosition;
         transform.right = direction;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
+        {
+            launchForce += 0.01f;
+        }
+
+        if (Input.GetMouseButtonUp(0))
         {
             Throw();
+            launchForce = 6;
         }
     }
     void Throw() 
