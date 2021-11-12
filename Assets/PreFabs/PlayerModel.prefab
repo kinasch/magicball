@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4818059875816383341}
   - component: {fileID: 4818059875816383342}
+  - component: {fileID: 1280764992493962058}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -45,6 +46,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
+--- !u!114 &1280764992493962058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818059875816383340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7916f111bbf0784489535deef7454e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicBall: {fileID: 4818059876589962369}
+  arm: {fileID: 4818059876860131162}
+  throwBall: {fileID: 1196044334402991994}
+  teleportX: 0.05
 --- !u!1 &4818059876484919091
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +181,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4818059876589962370}
   - component: {fileID: 4818059876589962371}
+  - component: {fileID: 7159400775937729203}
+  - component: {fileID: 8099599720392024445}
+  - component: {fileID: 1196044334402991994}
   m_Layer: 0
   m_Name: MagicBall
   m_TagString: Untagged
@@ -179,10 +199,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4818059876589962369}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.46666667, y: 0, z: 0}
+  m_LocalPosition: {x: 0.455, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 3, z: 1}
-  m_Children:
-  - {fileID: 4873448907939468905}
+  m_Children: []
   m_Father: {fileID: 4818059876860131163}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -237,6 +256,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &7159400775937729203
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818059876589962369}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0.4
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &8099599720392024445
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818059876589962369}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.50000006
+--- !u!114 &1196044334402991994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818059876589962369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ef9c365f53d904aa604a7b837b1e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4818059876860131162
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +335,7 @@ Transform:
   m_LocalScale: {x: 3, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4818059876589962370}
+  - {fileID: 4873448907939468905}
   m_Father: {fileID: 4818059877306967059}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -333,9 +402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a68bfb86c40904cac9e1cd326fe089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magicBall: {fileID: 5827294893207968125, guid: 450be345e15d9f844aef49bdefc265f6, type: 3}
   launchForce: 6
   throwPosition: {fileID: 4873448907939468905}
+  magicBall: {fileID: 4818059876589962369}
 --- !u!1 &4818059876952285511
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,10 +754,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4854897700080185263}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.455, y: 0, z: 0}
+  m_LocalScale: {x: 0.20000002, y: 3, z: 1}
   m_Children: []
-  m_Father: {fileID: 4818059876589962370}
-  m_RootOrder: 0
+  m_Father: {fileID: 4818059876860131163}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
