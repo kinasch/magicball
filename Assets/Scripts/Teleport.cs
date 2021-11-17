@@ -9,7 +9,7 @@ public class Teleport : MonoBehaviour
     public GameObject arm;
     public ThrowBall throwBall;
     // Determines at what x-velocity of the ball the player should teleport
-    public float teleportX = 0.05f;
+    public float teleportX = 0.2f; //ball velocity when player teleports to ball 
 
     private ArmAim armAimScript;
 
