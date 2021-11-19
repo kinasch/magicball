@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4818059875816383341}
   - component: {fileID: 4818059875816383342}
-  - component: {fileID: 1280764992493962058}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -46,22 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
---- !u!114 &1280764992493962058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4818059875816383340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7916f111bbf0784489535deef7454e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magicBall: {fileID: 4818059876589962369}
-  arm: {fileID: 4818059876860131162}
-  throwBall: {fileID: 1196044334402991994}
-  teleportX: 0.05
 --- !u!1 &4818059876484919091
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +269,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 4818059876589962369}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 97ed9f733718de0438e0bf44b7224c24, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -380,7 +363,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.5377358, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5377358, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -499,6 +482,7 @@ GameObject:
   - component: {fileID: 4818059877306967071}
   - component: {fileID: 4818059877306967070}
   - component: {fileID: 4818059877306967069}
+  - component: {fileID: 1984258876967565601}
   m_Layer: 0
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -594,7 +578,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &4818059877306967069
 BoxCollider2D:
@@ -622,6 +606,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1984258876967565601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818059877306967058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7916f111bbf0784489535deef7454e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicBall: {fileID: 4818059876589962369}
+  arm: {fileID: 4818059876860131162}
+  throwBall: {fileID: 1196044334402991994}
+  teleportX: 0.05
 --- !u!1 &4818059877536534286
 GameObject:
   m_ObjectHideFlags: 0
