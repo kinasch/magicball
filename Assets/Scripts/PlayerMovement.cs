@@ -6,13 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     private float moveX;
     public float moveSpeed = 12f;
-
-
+    public Animator animator;
 
     void Update()
-    {
-        moveX = Input.GetAxisRaw("Horizontal");
-        transform.position += new Vector3(moveX, 0, 0) * Time.deltaTime * moveSpeed;
 
+    {
+        animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+
+        moveX = Input.GetAxis("Horizontal");
+        transform.position += new Vector3(moveX, 0, 0) * Time.deltaTime * moveSpeed;
     }
 }
