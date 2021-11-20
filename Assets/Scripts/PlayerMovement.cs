@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
 
     {
-        animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+        animator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
 
-        moveX = Input.GetAxis("Horizontal");
+        moveX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(moveX, 0, 0) * Time.deltaTime * moveSpeed;
     }
 }
