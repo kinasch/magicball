@@ -37,4 +37,11 @@ public class Teleport : MonoBehaviour
     {
         this.transform.position = magicBall.transform.position;
     }
+
+    // I need a way to reset some things that would be lost if the game is quit e.g. during the ball's flying phase
+    private void OnApplicationQuit()
+    {
+        Debug.Log("test");
+        throwBall.ResetBall(armAimScript.throwPosition, arm.transform);
+    }
 }

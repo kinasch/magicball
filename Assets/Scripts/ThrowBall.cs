@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,11 @@ using UnityEngine;
 public class ThrowBall : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
+    private PhysicsMaterial2D ballPhysicsMat;
     private new CircleCollider2D collider;
     private Transform ballTransform;
     private Vector3 ballLocalScale;
+    private float formerDrag, bounciness;
     
     void Start()
     {
@@ -15,6 +18,13 @@ public class ThrowBall : MonoBehaviour
         rigidbody = this.GetComponent<Rigidbody2D>();
         collider = this.GetComponent<CircleCollider2D>();
         ballLocalScale = this.transform.localScale;
+        ballPhysicsMat = collider.sharedMaterial;
+        
+        // Trying to have bounciness as value to store things rather than as pointer
+        // When leaving out the '0 +' I am not sure whether it's the value that's stored in bounciness
+        // or whether it's the reference/pointer to the bounciness in the material, which is bound to change.
+        bounciness = 0 + ballPhysicsMat.bounciness;
+        formerDrag = 0 + rigidbody.drag;
     }
     
     public void Throw(float launchForce, Transform parent)
@@ -34,11 +44,15 @@ public class ThrowBall : MonoBehaviour
     public void ResetBall(Transform throwPosition, Transform parent)
     {
         // Reset the ball's collider and trigger
+        
         collider.isTrigger = true;
         rigidbody.gravityScale = 0;
         rigidbody.velocity = Vector2.zero;
         rigidbody.angularVelocity = 0;
         this.transform.position = throwPosition.position;
+        // Also reset the ball's physics
+        rigidbody.drag = formerDrag;
+        ballPhysicsMat.bounciness = bounciness;
 
         // Reset the ball's transform
         ballTransform.parent = parent;
