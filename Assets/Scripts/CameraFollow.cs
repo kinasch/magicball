@@ -1,17 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform Player;
-    public float cameraZ = -150f;
-
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private Transform ballTransform;
+    [SerializeField] private ThrowBall bt;
+    private float cameraZ = -150f;
+    
+    
 
     void Update()
     {
-        this.transform.position = new Vector3(Player.position.x, Player.position.y, cameraZ);
-
-
+        if (bt.ballthrown)
+        {
+            transform.position = new Vector3(ballTransform.position.x, ballTransform.position.y, cameraZ);
+           
+        }
+        else
+        {
+            transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, cameraZ);
+        }
+        
     }
 }

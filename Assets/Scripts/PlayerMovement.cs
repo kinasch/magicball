@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
             moveX = Input.GetAxisRaw("Horizontal");
             playerRB.velocity = new Vector2(moveX * moveSpeed, 0);
-            Debug.Log(playerRB.velocity.y);
         }
         else
         {

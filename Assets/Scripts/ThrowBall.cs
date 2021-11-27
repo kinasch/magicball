@@ -11,13 +11,14 @@ public class ThrowBall : MonoBehaviour
     private Transform ballTransform;
     private Vector3 ballLocalScale;
     private float formerDrag, bounciness;
+    public bool ballthrown;
     
     void Start()
     {
-        ballTransform = this.transform;
-        rigidbody = this.GetComponent<Rigidbody2D>();
-        collider = this.GetComponent<CircleCollider2D>();
-        ballLocalScale = this.transform.localScale;
+        ballTransform = transform;
+        rigidbody = GetComponent<Rigidbody2D>();
+        collider = GetComponent<CircleCollider2D>();
+        ballLocalScale = transform.localScale;
         ballPhysicsMat = collider.sharedMaterial;
         
         // Trying to have bounciness as value to store things rather than as pointer
@@ -33,11 +34,12 @@ public class ThrowBall : MonoBehaviour
         if (ballTransform.parent == parent)
         {
             // Moves the ball up in the hierarchy and makes it able to be influence by gravity and collision
-            this.transform.parent = null;
+            transform.parent = null;
             collider.isTrigger = false;
             rigidbody.gravityScale = 1;
             // Actual ball movement via initial velocity
             rigidbody.velocity = ballTransform.right * launchForce;
+            ballthrown = true;
         }
     }
 
@@ -49,7 +51,7 @@ public class ThrowBall : MonoBehaviour
         rigidbody.gravityScale = 0;
         rigidbody.velocity = Vector2.zero;
         rigidbody.angularVelocity = 0;
-        this.transform.position = throwPosition.position;
+        transform.position = throwPosition.position;
         // Also reset the ball's physics
         rigidbody.drag = formerDrag;
         ballPhysicsMat.bounciness = bounciness;
@@ -59,5 +61,6 @@ public class ThrowBall : MonoBehaviour
         ballTransform.localRotation = Quaternion.identity;
         ballTransform.localScale = ballLocalScale;
         ballTransform.localPosition = throwPosition.localPosition;
+        ballthrown = false;
     }
 }
