@@ -12,6 +12,8 @@ public class Teleport : MonoBehaviour
     public float teleportX = 0.2f; //ball velocity when player teleports to ball 
 
     private ArmAim armAimScript;
+    
+    public Animator animator;
 
     private void Start()
     {
@@ -25,17 +27,19 @@ public class Teleport : MonoBehaviour
         {
             Vector3 magicBallVelocity = magicBall.GetComponent<Rigidbody2D>().velocity;
             // Check if velocity is nearly zero
+            animator.ResetTrigger("Teleport");
             if (Math.Abs(magicBallVelocity.x) <= teleportX && Math.Abs(magicBallVelocity.y) == 0)
             {
                 TeleportPlayer();
                 throwBall.ResetBall(armAimScript.throwPosition, arm.transform);
             }
-        }
+        }        
     }
 
     void TeleportPlayer()
     {
         this.transform.position = magicBall.transform.position;
+        animator.SetTrigger("Teleport");
     }
 
     // I need a way to reset some things that would be lost if the game is quit e.g. during the ball's flying phase
