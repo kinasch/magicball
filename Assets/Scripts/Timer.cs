@@ -1,12 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] private Text timerText;
+    [SerializeField] private Leaderboard leaderboard;
+    [SerializeField] private string playerName = "Default";
+    
     private float timer;
     private bool timeStopped = false;
     public string formattedTime = "00:00.000";
@@ -28,9 +32,14 @@ public class Timer : MonoBehaviour
 
     public void StopTimer()
     {
-        timeStopped = true;
-        var timeStop = timer;
-        Debug.Log(timeStop);
+        if (!timeStopped)
+        {
+            timeStopped = true;
+            var timeStop = timer;
+            Debug.Log(timeStop);
+
+            leaderboard.SaveEntry(playerName, timeStop);
+        }
     }
 
     public string GetFormattedTime()
