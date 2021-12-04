@@ -28,8 +28,14 @@ public class Teleport : MonoBehaviour
             Vector3 magicBallVelocity = magicBall.GetComponent<Rigidbody2D>().velocity;
             // Check if velocity is nearly zero
             animator.ResetTrigger("Teleport");
+            if (Math.Abs(magicBallVelocity.x) <= teleportX + 0.005f && Math.Abs(magicBallVelocity.x) >= teleportX && Math.Abs(magicBallVelocity.y) == 0)
+            {
+                animator.SetBool("readyTeleport", true);
+            }
+
             if (Math.Abs(magicBallVelocity.x) <= teleportX && Math.Abs(magicBallVelocity.y) == 0)
             {
+                animator.SetBool("readyTeleport", true);
                 TeleportPlayer();
                 throwBall.ResetBall(armAimScript.throwPosition, arm.transform);
             }
@@ -37,8 +43,9 @@ public class Teleport : MonoBehaviour
     }
 
     void TeleportPlayer()
-    {
+    {   
         this.transform.position = magicBall.transform.position;
+        animator.SetBool("readyTeleport", false);
         animator.SetTrigger("Teleport");
     }
 

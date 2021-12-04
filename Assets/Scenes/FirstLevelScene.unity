@@ -3704,6 +3704,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2144007095}
     m_Modifications:
+    - target: {fileID: 655143897470080127, guid: 367a82197049d584abed48656e49f166, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.34
+      objectReference: {fileID: 0}
     - target: {fileID: 1961916639720333106, guid: 367a82197049d584abed48656e49f166, type: 3}
       propertyPath: m_Name
       value: Obstacle_1
@@ -8343,11 +8347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4818059877306967071, guid: c50db45a24bd5774ab82e9ded2ba449c, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4818059877306967071, guid: c50db45a24bd5774ab82e9ded2ba449c, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1675395643
+      value: -1558946841
       objectReference: {fileID: 0}
     - target: {fileID: 8115752168159741638, guid: c50db45a24bd5774ab82e9ded2ba449c, type: 3}
       propertyPath: m_Controller
