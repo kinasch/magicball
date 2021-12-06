@@ -16,6 +16,8 @@ public class Teleport : MonoBehaviour
     private Friction friction;
     private bool isGoingToTeleport = false;
 
+    public Animator animator;
+
     private void Start()
     {
         armAimScript = arm.GetComponent<ArmAim>();
@@ -29,13 +31,20 @@ public class Teleport : MonoBehaviour
         {
             Vector3 magicBallVelocity = magicBall.GetComponent<Rigidbody2D>().velocity;
             // Check if velocity is nearly zero
+            animator.ResetTrigger("Teleport");
+            if (Math.Abs(magicBallVelocity.x) <= teleportX + 0.005f && Math.Abs(magicBallVelocity.x) >= teleportX && Math.Abs(magicBallVelocity.y) <= teleportX)
+            {
+                animator.SetBool("readyTeleport", true);
+            }
+
             if (Math.Abs(magicBallVelocity.x) <= teleportX && Math.Abs(magicBallVelocity.y) <= teleportX)
             {
                 if (!isGoingToTeleport)
-                {
+                {   
+                    isGoingToTeleport = true;
                     StartCoroutine(TeleportPlayer());
                 }
-                isGoingToTeleport = true;
+                
             }
         }
     }
@@ -44,10 +53,15 @@ public class Teleport : MonoBehaviour
     {
         if (friction.glue)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1.5f);
+            animator.SetBool("readyTeleport", true);
+            yield return new WaitForSeconds(0.5f);
+            
         }
         this.transform.position = magicBall.transform.position;
         throwBall.ResetBall(armAimScript.throwPosition, arm.transform);
+        animator.SetBool("readyTeleport", false);
+        animator.SetTrigger("Teleport");
         isGoingToTeleport = false;
         yield return null;
     }
