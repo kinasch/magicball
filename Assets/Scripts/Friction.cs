@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Friction : MonoBehaviour
 {
-    [SerializeField] private int test;
+    public bool glue;
 
     private Rigidbody2D ballRigidbody;
     private PhysicsMaterial2D ballPhysicsMaterial;
@@ -22,8 +22,12 @@ public class Friction : MonoBehaviour
      */
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (glue)
+        {
+            ballRigidbody.drag = 100000f;
+        }
         // Exclude the player from the copying
-        if (!other.gameObject.name.Contains("Player"))
+        if (!other.gameObject.name.Contains("Player") && !glue)
         {
             var otherPhysicsMaterial2D = other.collider.sharedMaterial;
             // Only take the other material's value if it exists (seems legit lol)
