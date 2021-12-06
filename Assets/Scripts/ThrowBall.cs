@@ -11,10 +11,16 @@ public class ThrowBall : MonoBehaviour
     private Transform ballTransform;
     private Vector3 ballLocalScale;
     private float formerDrag, bounciness;
+    private Friction friction;
+    private ArmAim armAimScript;
+    
     public bool ballthrown;
     
     void Start()
     {
+        armAimScript = FindObjectOfType<ArmAim>();
+        friction = FindObjectOfType<Friction>();
+        
         ballTransform = transform;
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<CircleCollider2D>();
@@ -40,13 +46,16 @@ public class ThrowBall : MonoBehaviour
             // Actual ball movement via initial velocity
             rigidbody.velocity = ballTransform.right * launchForce;
             ballthrown = true;
+
+            armAimScript.enabled = false;
         }
     }
 
     public void ResetBall(Transform throwPosition, Transform parent)
     {
-        // Reset the ball's collider and trigger
+        friction.glue = false;
         
+        // Reset the ball's collider and trigger
         collider.isTrigger = true;
         rigidbody.gravityScale = 0;
         rigidbody.velocity = Vector2.zero;
@@ -62,5 +71,7 @@ public class ThrowBall : MonoBehaviour
         ballTransform.localScale = ballLocalScale;
         ballTransform.localPosition = throwPosition.localPosition;
         ballthrown = false;
+        
+        armAimScript.enabled = true;
     }
 }

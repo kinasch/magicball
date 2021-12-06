@@ -33,7 +33,8 @@ public class ArmAim : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            launchForce += 0.01f;
+            launchForce += Time.deltaTime;
+            Debug.Log(launchForce);
         }
 
         if (Input.GetMouseButtonUp(0))
