@@ -359,9 +359,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a68bfb86c40904cac9e1cd326fe089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 6
   throwPosition: {fileID: 4873448907939468905}
   magicBall: {fileID: 4818059876589962369}
+  maxLaunchForce: 12
+  pointForTrajectory: {fileID: 2586573367043613127, guid: d5953c09e1f5ef149980f96624a1e667, type: 3}
+  numberOfPoints: 25
+  spaceBetweenPoints: 0.025
+  trajectoryUpgrade: 0
 --- !u!1 &4818059876952285511
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,9 +13,9 @@ public class ThrowBall : MonoBehaviour
     private float formerDrag, bounciness;
     private Friction friction;
     private ArmAim armAimScript;
-    
+
     public bool ballthrown;
-    
+
     void Start()
     {
         armAimScript = FindObjectOfType<ArmAim>();
@@ -48,13 +48,14 @@ public class ThrowBall : MonoBehaviour
             ballthrown = true;
 
             armAimScript.enabled = false;
+            armAimScript.trajectoryUpgrade = false;
         }
     }
 
     public void ResetBall(Transform throwPosition, Transform parent)
     {
         friction.glue = false;
-        
+
         // Reset the ball's collider and trigger
         collider.isTrigger = true;
         rigidbody.gravityScale = 0;
@@ -62,7 +63,7 @@ public class ThrowBall : MonoBehaviour
         rigidbody.angularVelocity = 0;
         transform.position = throwPosition.position;
         // Also reset the ball's physics
-        rigidbody.drag = formerDrag;
+        rigidbody.drag = 0;
         ballPhysicsMat.bounciness = bounciness;
 
         // Reset the ball's transform

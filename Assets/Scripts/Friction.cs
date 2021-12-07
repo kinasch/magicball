@@ -36,6 +36,11 @@ public class Friction : MonoBehaviour
                 ballPhysicsMaterial.bounciness = otherPhysicsMaterial2D.bounciness;
                 ballRigidbody.drag = otherPhysicsMaterial2D.friction;
             }
+            else
+            {
+                ballRigidbody.drag = 0.5f;
+                ballPhysicsMaterial.bounciness = 0.5f;
+            }
         }
     }
 }
