@@ -37,7 +37,7 @@ public class Teleport : MonoBehaviour
                 animator.SetBool("readyTeleport", true);
             }
 
-            if (Math.Abs(magicBallVelocity.x) <= teleportX && Math.Abs(magicBallVelocity.y) <= teleportX)
+            if (Math.Abs(magicBallVelocity.x) <= teleportX && (Math.Abs(magicBallVelocity.y) == 0 || (friction.glue && magicBall.GetComponent<Rigidbody2D>().drag >= 1000f)))
             {
                 if (!isGoingToTeleport)
                 {   
