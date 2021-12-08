@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             animator.SetBool("Falling", true);
-            playerRB.velocity = new Vector2((moveX/2)*moveSpeed, Mathf.Clamp(playerRB.velocity.y, playerYVelocityMax, 0));
+            playerRB.velocity = new Vector2(playerRB.velocity.x, Mathf.Clamp(playerRB.velocity.y, playerYVelocityMax, 0));
         }
 
         
