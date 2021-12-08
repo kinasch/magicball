@@ -38,48 +38,53 @@ public class ArmAim : MonoBehaviour
     //script to makes arms look to mouse position
     void Update()
     {
-        Vector2 armPosition = transform.position;
-        //Camera.main.ScreenToWorldPoint transforms pixel coordinates to world space 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        direction = mousePosition - armPosition;
-        transform.right = direction;
-
-        if (magicBall.transform.parent == this.transform && magicBall.transform.position != throwPosition.position)
+        if (Time.timeScale > 0)
         {
-            magicBall.transform.position = throwPosition.position;
-        }
+            Vector2 armPosition = transform.position;
+            //Camera.main.ScreenToWorldPoint transforms pixel coordinates to world space 
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            direction = mousePosition - armPosition;
+            transform.right = direction;
 
-        if (points[0].activeSelf)
-        {
-            for (var i = 0; i < numberOfPoints; i++)
+            if (magicBall.transform.parent == this.transform && magicBall.transform.position != throwPosition.position)
             {
-                points[i].SetActive(false);
+                magicBall.transform.position = throwPosition.position;
             }
-        }
-        if (trajectoryUpgrade)
-        {
-            if (!points[0].activeSelf)
+
+            if (points[0].activeSelf)
             {
                 for (var i = 0; i < numberOfPoints; i++)
                 {
-                    points[i].SetActive(true);
+                    points[i].SetActive(false);
                 }
             }
-            for (var i = 0; i < numberOfPoints; i++)
+
+            if (trajectoryUpgrade)
             {
-                points[i].transform.position = SetTrajectoryPoint(i*spaceBetweenPoints);
+                if (!points[0].activeSelf)
+                {
+                    for (var i = 0; i < numberOfPoints; i++)
+                    {
+                        points[i].SetActive(true);
+                    }
+                }
+
+                for (var i = 0; i < numberOfPoints; i++)
+                {
+                    points[i].transform.position = SetTrajectoryPoint(i * spaceBetweenPoints);
+                }
             }
-        }
 
-        if (Input.GetMouseButton(0))
-        {
-            launchForce += Time.deltaTime;
-        }
+            if (Input.GetMouseButton(0))
+            {
+                launchForce += Time.deltaTime;
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            throwBall.Throw(Mathf.Clamp(launchForce,6,maxLaunchForce), this.transform);
-            launchForce = 6;
+            if (Input.GetMouseButtonUp(0))
+            {
+                throwBall.Throw(Mathf.Clamp(launchForce, 6, maxLaunchForce), this.transform);
+                launchForce = 6;
+            }
         }
     }
 

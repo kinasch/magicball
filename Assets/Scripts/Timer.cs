@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private Text timerText;
+    [SerializeField] private TMP_Text timerText;
     [SerializeField] private Leaderboard leaderboard;
     [SerializeField] private string playerName = "Default";
     
@@ -26,7 +27,7 @@ public class Timer : MonoBehaviour
         {
             timer = Time.time;
             formattedTime = FormatTime(timer);
-            timerText.text = "Time: " + formattedTime;
+            timerText.text = formattedTime;
         }
     }
 

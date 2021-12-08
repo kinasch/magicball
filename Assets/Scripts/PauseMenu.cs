@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject Menu;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
+    private GameObject optionsmenu;
     private static bool GameisPaused = false;
     private Resolution[] resolutions;
 
@@ -36,6 +38,8 @@ public class PauseMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        optionsmenu = this.transform.Find("OptionMenu").gameObject;
     }
 
     // Update is called once per frame
@@ -43,15 +47,18 @@ public class PauseMenu : MonoBehaviour
     {
         if (this.tag != "MainMenu")
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (!optionsmenu.activeSelf)
             {
-                if (GameisPaused)
+                if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Return();
-                }
-                else
-                {
-                    Pause();
+                    if (GameisPaused)
+                    {
+                        Return();
+                    }
+                    else
+                    {
+                        Pause();
+                    }
                 }
             }
         }
