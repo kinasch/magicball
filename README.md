@@ -1,14 +1,22 @@
-﻿# Team Jaabni
-Repository für das 2D Game im Rahmen vom "Game Engines"-Kurs
+﻿# Magic Ball
+Lass dich, im wahrsten Sinne des Wortes, entführen in ein magisches Verlies.
+Nun ist Flucht angesagt, aber der Ausgang ist so weit oben und gerade jetzt kommen die
+alten Sprunggelenkschmerzen wieder hoch. Nur der mysteriöse "Ball der Teleportation"
+vom alten Mann in der Ecke soll jetzt noch helfen können.
+
+
 ## Idea
 Ein 2D Platformer mit dem Ziel nach oben zu kommen,
-jedoch kommt man nur mit Teleportationskugeln nach oben.
+jedoch erreicht man das nur mit der Teleportationskugel.
 
-## Team
-* Nico Mania
-* Abdul Rahman Kassem
-* Janik Schönberg
-
+## Steuerung
+* Maus
+  * Zielen mit dem Ball (deswegen der Spielname)
+  * Navigieren in den Menüs
+* A und D
+  * nach links, respektive, rechts laufen mit dem Player
+* Escape (ESC)
+  * Pausieren
 ### Main Mechanic:
 * Schieferwurf 2D Platforms (Like Jump King)
 * Werfen auf Platform, soll dort liegen bleiben

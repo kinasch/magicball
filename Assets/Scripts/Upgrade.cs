@@ -7,12 +7,31 @@ public class Upgrade : MonoBehaviour
 {
     private Friction friction;
     private ArmAim armAim;
+    private PlayerMovement playerMovement;
+
+    private bool collected=false;
     
     // Start is called before the first frame update
     void Start()
     {
         friction = FindObjectOfType<Friction>();
         armAim = FindObjectOfType<ArmAim>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
+    }
+
+    private void Update()
+    {
+        if (!collected)
+        {
+            if (playerMovement.hardMode)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                this.gameObject.SetActive(true);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -27,6 +46,8 @@ public class Upgrade : MonoBehaviour
             {
                 armAim.trajectoryUpgrade = true;
             }
+
+            collected = true;
             this.gameObject.SetActive(false);
         }
     }
