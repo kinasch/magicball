@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     private bool isHeld = false;
+
+    public bool hardMode=false;
     
 
     void FixedUpdate()
@@ -20,10 +22,13 @@ public class PlayerMovement : MonoBehaviour
         if (playerRB.velocity.y >= 0)
         {
             animator.SetBool("Falling", false);
-            moveX = Input.GetAxisRaw("Horizontal");
-            animator.SetFloat("Horizontal", moveX);
+            if (!hardMode)
+            {
+                moveX = Input.GetAxisRaw("Horizontal");
+                animator.SetFloat("Horizontal", moveX);
 
-            playerRB.velocity = new Vector2(moveX * moveSpeed, 0);
+                playerRB.velocity = new Vector2(moveX * moveSpeed, 0);
+            }
 
             if (Input.GetMouseButton(0) && !isHeld)
             {
@@ -53,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
         
         
  
+    }
+
+    public void changeHardMode()
+    {
+        hardMode = !hardMode;
     }
 
     private void Start()

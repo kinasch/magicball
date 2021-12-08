@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestPhysicsMaterial2D
-  friction: 0
+  m_Name: BounceRoomPhysicsStopper
+  friction: 3
   bounciness: 0
