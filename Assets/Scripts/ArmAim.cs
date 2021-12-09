@@ -10,7 +10,8 @@ public class ArmAim : MonoBehaviour
     [SerializeField] public Transform throwPosition;
     [SerializeField] private GameObject magicBall;
     [SerializeField] private float maxLaunchForce;
-    private float launchForce;
+    [SerializeField] private AudioSource magicCharge;
+    private float launchForce = 6f;
 
     private ThrowBall throwBall;
     private Vector2 direction;
@@ -77,7 +78,14 @@ public class ArmAim : MonoBehaviour
 
             if (Input.GetMouseButton(0))
             {
-                launchForce += Time.deltaTime;
+                launchForce += (Time.deltaTime*2);
+                if (!magicCharge.isPlaying)
+                {
+                    if ((launchForce >= 7.8f && launchForce <= 8.0f) || (launchForce >= 9.8f && launchForce <= 10.0f) || (launchForce >= 11.8f && launchForce <= 12.0f))
+                    {
+                        magicCharge.Play();
+                    }
+                }
             }
 
             if (Input.GetMouseButtonUp(0))
