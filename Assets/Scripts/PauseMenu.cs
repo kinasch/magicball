@@ -1,14 +1,15 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject Menu;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] private AudioMixer audioMixer;
+    
     private GameObject optionsmenu;
     private static bool GameisPaused = false;
     private Resolution[] resolutions;
@@ -127,6 +128,12 @@ public class PauseMenu : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("musicVolume", volume);
+        audioMixer.SetFloat("sfxVolume", volume);
     }
 }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isHeld = false;
 
     public bool hardMode=false;
+    [SerializeField] private Toggle hardmodeToggle; 
     
 
     void FixedUpdate()
@@ -65,10 +67,23 @@ public class PlayerMovement : MonoBehaviour
     public void changeHardMode()
     {
         hardMode = !hardMode;
+        var number = hardMode ? 1 : 0;
+        PlayerPrefs.SetInt("hardMode", number);
     }
 
     private void Start()
     {
         playerRB = this.GetComponent<Rigidbody2D>();
+        
+        if (PlayerPrefs.GetInt("hardMode") == 1)
+        {
+            hardmodeToggle.isOn = true;
+            hardMode = true;
+        }
+        else
+        {
+            hardmodeToggle.isOn = false;
+            hardMode = false;
+        }
     }
 }
