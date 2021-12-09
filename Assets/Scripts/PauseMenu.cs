@@ -100,6 +100,7 @@ public class PauseMenu : MonoBehaviour
     public void Exit()
     {
         Debug.Log("exits to main menu");
+        Time.timeScale = 1f; // for particle System
         SceneManager.LoadScene("MainMenu");
     }
 
