@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Leaderboard : MonoBehaviour
 {
     [SerializeField] private string fileName = "leaderboard.sav";
-    [SerializeField] private Text testText;
+    [SerializeField] private TMP_Text[] textFields;
 
     private float[] times;
     private LeaderboardData lbData;
@@ -20,20 +21,23 @@ public class Leaderboard : MonoBehaviour
         {
             lbData.FromJSON(FileManager.LoadFromFile(fileName));
         }
-
-        UpdateLeaderboardText();
     }
 
-    private void UpdateLeaderboardText()
+    public void UpdateLeaderboardText()
     {
-        testText.text = "";
+        foreach (var textField in textFields)
+        {
+            textField.text = "";
+        }
         if (lbData.lbentries != null)
         {
             SortAndLimitLeaderboard(lbData);
             var i = 1;
             foreach (var lbE in lbData.lbentries)
             {
-                testText.text +=  ""+i+". " +lbE.name + ": " + Timer.FormatTime(lbE.time) +"\n";
+                textFields[0].text +=  ""+i+".\n";
+                textFields[1].text += lbE.name + "\n";
+                textFields[2].text += Timer.FormatTime(lbE.time) + "\n";
                 i++;
             }
         }
@@ -55,8 +59,6 @@ public class Leaderboard : MonoBehaviour
         Debug.Log(json);
 
         FileManager.WriteToFile(fileName, json);
-        
-        UpdateLeaderboardText();
     }
 
     // Sorts the leaderboard by fastest time and deletes all entries after the tenth.

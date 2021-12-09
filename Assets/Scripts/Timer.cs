@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text timerText;
-    [SerializeField] private Leaderboard leaderboard;
     [SerializeField] private string playerName = "Default";
     
+    private Leaderboard leaderboard;
     private float timer;
     private bool timeStopped = false;
     public string formattedTime = "00:00.000";
@@ -19,15 +20,27 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         timer = 0;
+        leaderboard = this.GetComponent<Leaderboard>();
+
+        playerName = Application.persistentDataPath.ToString().Replace("C:/Users/", "")
+            .Replace("/AppData/LocalLow/DefaultCompany/Jaabni", "");
     }
 
     private void Update()
     {
-        if(!timeStopped)
+        if(!timeStopped && !SceneManager.GetActiveScene().name.Equals("MainMenu"))
         {
-            timer = Time.time;
+            if (!timerText.gameObject.activeSelf)
+            {
+                timerText.gameObject.SetActive(true);
+            }
+            timer += Time.deltaTime;
             formattedTime = FormatTime(timer);
             timerText.text = formattedTime;
+        }
+        else if(timerText.gameObject.activeSelf)
+        {
+            timerText.gameObject.SetActive(false);
         }
     }
 
