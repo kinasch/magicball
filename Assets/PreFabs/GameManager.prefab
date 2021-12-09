@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649623878894975063}
   - component: {fileID: 3841497793333999866}
+  - component: {fileID: 1363962022661100741}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,6 +49,23 @@ MonoBehaviour:
   leaderboard: {fileID: 0}
   playerName: Default
   formattedTime: 00:00.000
+--- !u!114 &1363962022661100741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3533355235795027769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d79e34d2da07e47abd1dd352793fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: leaderboard.sav
+  textFields:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &3812468055589969932
 GameObject:
   m_ObjectHideFlags: 0

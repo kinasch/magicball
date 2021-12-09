@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -23,9 +24,9 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        if(!timeStopped)
+        if(!timeStopped && !SceneManager.GetActiveScene().name.Equals("FirstLevelScene"))
         {
-            timer = Time.time;
+            timer += Time.deltaTime;
             formattedTime = FormatTime(timer);
             timerText.text = formattedTime;
         }
