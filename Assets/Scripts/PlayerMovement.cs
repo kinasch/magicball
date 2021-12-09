@@ -51,7 +51,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            animator.SetBool("Falling", true);
+            if(playerRB.velocity.y <= -1f){
+                animator.SetBool("Falling", true);
+            }
             playerRB.velocity = new Vector2(playerRB.velocity.x, Mathf.Clamp(playerRB.velocity.y, playerYVelocityMax, 0));
         }
 
