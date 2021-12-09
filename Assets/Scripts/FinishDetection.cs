@@ -6,10 +6,12 @@ using UnityEngine;
 public class FinishDetection : MonoBehaviour
 {
     [SerializeField] private GameObject gameManager;
+    private PauseMenu pauseMenu;
     private Timer timer;
 
     private void Start()
     {
+        pauseMenu = FindObjectOfType<PauseMenu>();
         timer = gameManager.GetComponent<Timer>();
     }
 
@@ -18,6 +20,7 @@ public class FinishDetection : MonoBehaviour
         if (other.gameObject.name.Contains("Player"))
         {
             timer.StopTimer();
+            pauseMenu.Exit();
         }
     }
 }
