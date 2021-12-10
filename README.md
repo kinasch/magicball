@@ -24,17 +24,23 @@ _von Nexile._
 | A | nach links laufen |
 | D | nach rechts laufen |
 | ESC | Pausieren |
+
 ## Features
+
 ###Schräger Wurf,
+
 <img src="https://i.imgur.com/d5ibUih.gif" height="180"/>
 
 ###Animationen,
+
 <img src="https://i.imgur.com/yMmQL2A.gif" height="120"/>
 
 ###Upgrades,
+
 <img src="https://i.imgur.com/qBmAt1d.gif" height="180"/>
 
 ###Speedrun Timer,
+
 ![](https://i.imgur.com/4h1QbXI.png)
 
 ### Musik, Sounds, Leaderboard und vieles mehr
@@ -48,13 +54,21 @@ _von Nexile._
 Kommt noch, hoffentlich.
 
 #Quellen
+
 ###Code
+
 Code-Referenzen und Tutorials sind in der [sources.txt](https://github.com/kinasch/Jaabni/blob/main/sources.txt).
+
 ###Musik
+
 Teller of the Tales by Kevin MacLeod (incompetech.com)  
 Licensed under Creative Commons: By Attribution 3.0  
 http://creativecommons.org/licenses/by/3.0/
+
 ###Sounds
+
 Die SFX sind von [freesound.org](https://freesound.org/).
+
 ###Tileset
+
 Das Tileset mit den Ziegeln, Vasen und Käfigen kommt von https://www.patreon.com/Anokolisa
