@@ -130,10 +130,16 @@ public class PauseMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void SetVolume(float volume)
+    public void SetMusicVolume(float volume)
     {
         audioMixer.SetFloat("musicVolume", volume);
+        
+    }
+
+    public void SetSFXVolume(float volume)
+    {
         audioMixer.SetFloat("sfxVolume", volume);
+        
     }
 }
 
