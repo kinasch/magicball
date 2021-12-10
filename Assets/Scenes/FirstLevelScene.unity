@@ -23524,6 +23524,18 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetMusicVolume
       objectReference: {fileID: 0}
+    - target: {fileID: 6936009546226707649, guid: 0d3f1d8ce610a634283889e2e60e3ca6, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936009546226707649, guid: 0d3f1d8ce610a634283889e2e60e3ca6, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936009546226707649, guid: 0d3f1d8ce610a634283889e2e60e3ca6, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6936009546524194404, guid: 0d3f1d8ce610a634283889e2e60e3ca6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -23628,6 +23640,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1935686646}
+    - target: {fileID: 6936009547767449025, guid: 0d3f1d8ce610a634283889e2e60e3ca6, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936009547767449025, guid: 0d3f1d8ce610a634283889e2e60e3ca6, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936009547767449025, guid: 0d3f1d8ce610a634283889e2e60e3ca6, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 8060204016242987218, guid: 0d3f1d8ce610a634283889e2e60e3ca6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSFXVolume
@@ -46623,6 +46647,18 @@ PrefabInstance:
     - target: {fileID: 649623878894975063, guid: 8c2b38c402e8833429b622664d1fa6ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442115923320139665, guid: 8c2b38c402e8833429b622664d1fa6ab, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442115923320139665, guid: 8c2b38c402e8833429b622664d1fa6ab, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442115923320139665, guid: 8c2b38c402e8833429b622664d1fa6ab, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 3533355235795027769, guid: 8c2b38c402e8833429b622664d1fa6ab, type: 3}
       propertyPath: m_Name

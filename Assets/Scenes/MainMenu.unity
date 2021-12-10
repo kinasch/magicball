@@ -5693,6 +5693,18 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 167918351}
+    - target: {fileID: 3242447716463920090, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242447716463920090, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242447716463920090, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 4372833656870475253, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -5793,6 +5805,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8236711228924675234, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236711228924675234, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236711228924675234, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 8236711228924675235, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
       propertyPath: m_Camera
       value: 
@@ -5813,5 +5837,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 167918351}
+    - target: {fileID: 8903209889636091903, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903209889636091903, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903209889636091903, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6105b8897022a924d8c4332161fe0b80, type: 3}
