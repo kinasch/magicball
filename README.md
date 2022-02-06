@@ -51,7 +51,8 @@ _von Nexile._
 * [Janik](https://github.com/kinasch)
 
 ## Gameplay
-Kommt noch, hoffentlich.
+
+[![MagicBall Gameplay Video](http://img.youtube.com/vi/yiULDQUclgE/0.jpg)](http://www.youtube.com/watch?v=yiULDQUclgE "MagicBall-Shorter-Trailer")
 
 # Quellen
 
